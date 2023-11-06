@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Média Avaliações</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      main {
+        height: 100vh;
+      }
+      body {
+        background-color: black;
+      }
+      #container {
+        display: flex;
+        flex-direction: column;
+        width: 50vw;
+        height: 100%;
+        justify-content: center;
+        text-align: center;
+        margin: auto auto;
+        gap: 20px;
+        color: #fff;
+      }
+
+      section {
+        display: flex;
+        gap: 10%;
+        justify-content: center;
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+
+      td,
+      th {
+        padding: 10px;
+        font-size: 1.3rem;
+        border: 1px solid red;
+      }
+
+      #exibeMedia {
+        padding: 25% 0;
+        display: none;
+      }
+
+      #exibeMedia h2 {
+        margin-bottom: 20px;
+      }
+
+      #saida {
+        font-size: 1.7rem;
+        font-weight: bolder;
+      }
+
+      button {
+        background-color: rgba(255, 0, 0, 0.534);
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: bolder;
+        height: 3rem;
+        border-radius: 15px;
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="container">
+        <section>
+          <table>
+            <thead>
+              <tr>
+                <th>Nível de Avaliação</th>
+                <th>Nº de Avaliações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>⭐</td>
+                <td id="star1">2</td>
+              </tr>
+              <tr>
+                <td>⭐⭐</td>
+                <td id="star2">15</td>
+              </tr>
+              <tr>
+                <td>⭐⭐⭐</td>
+                <td id="star3">18</td>
+              </tr>
+              <tr>
+                <td>⭐⭐⭐⭐</td>
+                <td id="star4">25</td>
+              </tr>
+              <tr>
+                <td>⭐⭐⭐⭐⭐</td>
+                <td id="star5">40</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>Total de Avaliações</th>
+                <td>100</td>
+              </tr>
+            </tfoot>
+          </table>
+          <div id="exibeMedia">
+            <h2>Média das Avaliações</h2>
+            <output id="saida"></output>
+          </div>
+        </section>
+
+        <div id="btn">
+          <button type="button" id="botao">Calcular Média de ⭐</button>
+        </div>
+      </div>
+
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
