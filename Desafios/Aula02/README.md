@@ -14,3 +14,4 @@ Avaliação   | Total de Clientes
 &nbsp;
 - Após o fechamento do expediente, o gerente decidiu calcular a nota média das avaliações naquele dia; retorne o valor da nota média considerando o valor fixo de 100 clientes.
 
+
