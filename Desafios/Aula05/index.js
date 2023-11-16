@@ -10,8 +10,8 @@ const pessoa = [];
 // estrutura de repetição limitada a 4 iterações para preencher o Array (pessoa)
 for (let i = 1; i <= 4; i++) {
 
-  console.log(`\n========== Pessoa ${i} ==========\n`);
   // Entradas do usuário direto no terminal do NodeJS
+  console.log(`\n========== Pessoa ${i} ==========\n`);
   const nome = String(readline.question("Nome => ")).trim().toUpperCase();
   const peso = Number(readline.question("Peso (em 'Kg') => "));
   const altura = Number(readline.question("Altura (em 'm') => "));
