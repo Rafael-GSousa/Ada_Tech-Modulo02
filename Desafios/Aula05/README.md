@@ -1,5 +1,3 @@
-
-
 # Calculadora de Índice de Massa Corporal (IMC)
 
 Descrição:
@@ -19,3 +17,11 @@ Com base no resultado, informe ao usuário em qual faixa de IMC ele se encontra,
 Peso normal: 18.5 <= IMC < 24.9 <br/>
 Sobrepeso: 25 <= IMC < 29.9 <br/>
 Obesidade: IMC >= 30**
+
+## Resultado no Terminal do VS Code
+
+### Entrada de dados:
+![Alt text](image.png)
+
+### Saída esperada:
+![Alt text](image-1.png)
