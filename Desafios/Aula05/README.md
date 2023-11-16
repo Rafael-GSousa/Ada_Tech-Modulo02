@@ -14,8 +14,8 @@ Instruções:
 Com base no resultado, informe ao usuário em qual faixa de IMC ele se encontra, de acordo com a tabela abaixo:
 
 **Abaixo do peso: IMC < 18.5 <br/>
-Peso normal: 18.5 <= IMC < 24.9 <br/>
-Sobrepeso: 25 <= IMC < 29.9 <br/>
+Peso normal: 18.5 <= IMC <= 24.9 <br/>
+Sobrepeso: 25 <= IMC <= 29.9 <br/>
 Obesidade: IMC >= 30**
 
 ## Resultado no Terminal do VS Code
