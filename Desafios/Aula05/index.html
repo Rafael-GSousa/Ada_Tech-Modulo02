@@ -4,9 +4,79 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cálculo de IMC</title>
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 50vw;
+      padding-top: 20px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    body .entrada {
+      background-color: aqua;
+      width: 100%;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    form {
+      font-size: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+      padding: 10px;
+    }
+
+    body .saida {
+      background-color: bisque;
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+      padding: 10px;
+      height: auto;
+    }
+  </style>
+
 </head>
 <body>
-  <h1>Cálculo de IMC</h1>
+  <h1>Calculadora de IMC</h1>
+<section class="entrada">
+
+    <form action="">
+      <div>
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" placeholder="Informe seu nome">
+      </div>
+
+      <div>
+        <label for="peso">Peso:</label>
+        <input type="number" name="peso" id="peso" placeholder="Informe seu peso">
+      </div>
+
+      <div>
+        <label for="altura">Altura:</label>
+        <input type="number" name="altura" id="altura" placeholder="Informe sua altura">
+      </div>
+    </form>
+</section>
+
+<section class="saida">
+  <output>teste</output>
+</section>
+
   <script src="index.js"></script>
 </body>
 </html>
