@@ -2,13 +2,13 @@
 
 Adicionar a lógica de categoria nas tarefas, com isso as funcionalidades e campos mudam para:
 
-- Adicionar uma tarefa (id, titulo, descrição e categoria)
-- Editar uma tarefa salva (titulo, descrição e categoria)
-- Listar tarefas de uma categoria em especifico
-- Categoria é um campo opcional
+OK - Adicionar uma tarefa (id, titulo, descrição e categoria)
+OK - Editar uma tarefa salva (titulo, descrição e categoria)
+OK - Listar tarefas de uma categoria em especifico
+OK - Categoria é um campo opcional
 
 ### Todas a validações anteriores +
-- Categoria deve ter no mínimo 5 caracteres
+OK - Categoria deve ter no mínimo 5 caracteres
 
 ## Extra 2
 

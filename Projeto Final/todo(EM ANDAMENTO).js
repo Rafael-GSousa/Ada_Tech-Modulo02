@@ -18,10 +18,11 @@ function menu() {
   5. Obter / Exibir uma tarefa
   6. Listar todas as tarefas removidas
   7. Listar todas as tarefas (ativas e removidas)
+  8. Listar tarefas por categoria
   0. Sair
   `);
 
-  let id = String(new Date().getTime());
+  const id = String(new Date().getTime());
 
   const opcao = Number(prompt("Escolha uma opção: "));
 
@@ -29,34 +30,41 @@ function menu() {
     case 1:
       const titulo = prompt("Digite o título da tarefa: ").trim();
       const descricao = prompt("Digite a descrição da tarefa: ").trim();
-      // validacao(titulo, descricao);
-      if (validacao(titulo, descricao)) {
-        adicionarTarefa(id, titulo, descricao);
+      const categoria = prompt(
+        "Digite a categoria da tarefa (opcional): "
+      ).trim();
+      if (validacao(titulo, descricao, categoria)) {
+        adicionarTarefa(id, titulo, descricao, categoria);
       } else {
         menu();
       }
       break;
     case 2:
-      id = prompt("Digite o Id da tarefa que deseja editar: ").trim();
+      const idEditar = prompt(
+        "Digite o Id da tarefa que deseja editar: "
+      ).trim();
       const novoTitulo = prompt(
         "Digite o novo título da tarefa que deseja editar: "
       ).trim();
       const novaDescricao = prompt(
         "Digite a nova descrição da tarefa que deseja editar: "
       ).trim();
-      editarTarefa(id, novoTitulo, novaDescricao);
+      const novaCategoria = prompt(
+        "Digite a nova categoria da tarefa que deseja editar (opcional): "
+      ).trim();
+      editarTarefa(idEditar, novoTitulo, novaDescricao, novaCategoria);
       break;
     case 3:
-      id = prompt("Digite o Id da tarefa que deseja remover: ").trim();
-      removerTarefa(id);
+      removerTarefa(
+        prompt("Digite o Id da tarefa que deseja remover: ").trim()
+      );
       break;
     case 4:
       console.log(tarefasCriadas);
       menu();
       break;
     case 5:
-      id = prompt("Digite o Id da tarefa que deseja exibir: ").trim();
-      obterTarefa(id);
+      obterTarefa(prompt("Digite o Id da tarefa que deseja exibir: ").trim());
       break;
     case 6:
       console.log(tarefasRemovidas);
@@ -64,6 +72,11 @@ function menu() {
       break;
     case 7:
       console.log(tarefasSalvas);
+      menu();
+      break;
+    case 8:
+      const listarCategoria = prompt("Digite a categoria que deseja exibir: ").trim();
+      console.log(listarPorCategoria(listarCategoria));
       menu();
       break;
     case 0:
@@ -76,7 +89,7 @@ function menu() {
   }
 }
 
-function validacao(titulo, descricao) {
+function validacao(titulo, descricao, categoria = "Sem Categoria") {
   const regex = /^(?=.*[a-zA-Z])[\w\s!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
   try {
     if (titulo === "" || descricao === "") {
@@ -94,6 +107,13 @@ function validacao(titulo, descricao) {
     } else if (tarefasCriadas.some((tarefa) => tarefa.titulo === titulo)) {
       console.log("Já existe uma tarefa com este título!");
       return false;
+    } else if (
+      categoria.length < 5 &&
+      categoria !== "Sem Categoria" &&
+      categoria !== ""
+    ) {
+      console.log("A categoria deve ter no mínimo 5 caracteres!");
+      return false;
     }
   } catch (err) {
     console.log("Ocorreu um erro inesperado: ", err);
@@ -101,14 +121,19 @@ function validacao(titulo, descricao) {
   return true;
 }
 
-function adicionarTarefa(id, titulo, descricao) {
-  tarefasCriadas.push({ id, titulo, descricao });
-  tarefasSalvas.push({ id, titulo, descricao });
+function adicionarTarefa(id, titulo, descricao, categoria = "Sem Categoria") {
+  tarefasCriadas.push({ id, titulo, descricao, categoria });
+  tarefasSalvas.push({ id, titulo, descricao, categoria });
   console.log("Tarefa criada com sucesso!");
   menu();
 }
 
-function editarTarefa(id, novoTitulo, novaDescricao) {
+function editarTarefa(
+  id,
+  novoTitulo,
+  novaDescricao,
+  novaCategoria = "Sem Categoria"
+) {
   const tarefa = tarefasCriadas.find((tarefa) => tarefa.id === id);
   const tarefaSalva = tarefasSalvas.find(
     (tarefaSalva) => tarefaSalva.id === id
@@ -121,9 +146,11 @@ function editarTarefa(id, novoTitulo, novaDescricao) {
     tarefaSalva.titulo = novoTitulo;
     tarefa.descricao = novaDescricao;
     tarefaSalva.descricao = novaDescricao;
+    tarefa.categoria = novaCategoria;
+    tarefaSalva.categoria = novaCategoria;
     console.log("Tarefa alterada com sucesso!");
   }
-    menu();
+  menu();
 }
 
 function removerTarefa(id) {
@@ -153,6 +180,12 @@ function obterTarefa(id) {
     console.log("Tarefa não encontrada!");
   }
   menu();
+}
+
+function listarPorCategoria(categoria) {
+  const categorias = tarefasCriadas.filter((tarefa) => tarefa.categoria === categoria);
+
+  return categorias
 }
 
 menu();
