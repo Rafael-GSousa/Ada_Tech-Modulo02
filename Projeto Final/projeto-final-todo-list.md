@@ -8,22 +8,22 @@ Desenvolver, utilizando os conceitos abordados ao longo do módulo, uma aplicaç
 
 Dentre as funcionalidades, espera-se que seja possível:
 
-OK - Adicionar uma tarefa (id, titulo e descrição) 
-OK - Editar uma tarefa salva (titulo e descrição) 
-OK - Remover uma tarefa salva 
-OK - Listar todas as tarefas salvas 
-OK - Obter uma tarefa, através de um parâmetro (id) 
- ---
+TESTE OK <Adicionar uma tarefa (id, titulo e descrição)>
+TESTE "PARCIALMENTE" OK<Editar uma tarefa salva (titulo e descrição)>
+TESTE OK <Remover uma tarefa salva>
+TESTE OK <Listar todas as tarefas salvas>
+TESTE "PARCIALMENTE" OK <Obter uma tarefa, através de um parâmetro (id)>
+
 ## Validações
 
-OK - A tarefa não pode ter titulo e descrição vazios.
-OK - O título não deve conter apenas números
-OK - O titulo deve ter no mínimo 4 caracteres.
-OK - A descrição deve ter no mínimo 20 caracteres.
-OK - Não deve haver tarefas com o título duplicado.
+TESTE OK <A tarefa não pode ter titulo e descrição vazios.>
+TESTE OK <O título não deve conter apenas números>
+TESTE OK <O titulo deve ter no mínimo 4 caracteres.>
+TESTE OK <A descrição deve ter no mínimo 20 caracteres.>
+TESTE OK <Não deve haver tarefas com o título duplicado.>
 
 ## Observações
     
-OK - Não haverá a persistência das tarefas em banco de dados. Para isso, podem utilizar um `array` para armazenar a lista das tarefas cadastradas.
+Não haverá a persistência das tarefas em banco de dados. Para isso, podem utilizar um `array` para armazenar a lista das tarefas cadastradas.
 
 > Boa sorte!!! =D
