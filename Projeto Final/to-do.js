@@ -429,8 +429,7 @@ function listTasksTotals() {
   const totalTasksWithoutCategory = tasks.filter(
     (task) => task.categoria === ""
   ).length; // Quantidade de tarefas sem categoria
-  // * Quantidade de tarefas por categoria
-  // * ===================================
+ 
   const categoryCounts = {};
   tasks.forEach((task) => {
     if (task.categoria) {
@@ -451,10 +450,13 @@ function listTasksTotals() {
 
   console.log(`Tarefas na Aplicação: ${totalTasks}`);
   console.log(`Tarefas Sem Categoria: ${totalTasksWithoutCategory}`);
-  console.log(`\nTarefas por Categoria:`);
+  console.log(`\n
+  ============================
+  Tarefas por Categoria:`);
   for (const [category, count] of Object.entries(categoryCounts)) {
     console.log(`${category}: ${count}`);
   }
+  console.log('============================')
   console.log(`Tarefas Sem Vencimento: ${totalTasksWithoutDueDate}`);
   console.log(`Tarefas Vencidas: ${totalOverdueTasks}`);
   console.log(`Tarefas no prazo: ${totalUnoverdueTasks}`);
